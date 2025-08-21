@@ -195,7 +195,8 @@ git branch -a
          git log --oneline --graph --decorate --all
          ```
     - Link do site publicado na **Vercel**.
-7. Envie para meu email: pedroeckel@gmail.com
+    - Link do projeto no GitHub
+7. Envie para meu email: pedroeckel@gmail.com até 28/08/2025 às 23:59:59
 
 
 ---
