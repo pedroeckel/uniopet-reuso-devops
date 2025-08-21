@@ -1,6 +1,11 @@
-# Reuso de software com APIs
+# Centralizador de códigos - Reuso de software com APIs
 
-Este projeto demonstra aos alunos da UniOpet como reutilizar código e serviços externos por meio de APIs. Os exemplos estão organizados em notebooks Jupyter que consomem APIs públicas e reutilizam bibliotecas Python.
+Este repositório centraliza os exemplos utilizados nas aulas de reuso de software da UniOpet. Os materiais estão organizados por aula para facilitar o acesso dos estudantes.
+
+## Estrutura
+
+- `aula-3/`: notebooks e imagens das aulas anteriores.
+- `aula-4/`: pasta reservada para novos materiais.
 
 ## Requisitos
 
@@ -21,9 +26,9 @@ pip install jupyter requests folium polyline
    ```bash
    jupyter notebook
    ```
-3. Abra um dos arquivos `.ipynb` e execute as células sequencialmente.
+3. Abra um dos arquivos `.ipynb` na pasta desejada e execute as células sequencialmente.
 
-## Notebooks
+## Conteúdo da Aula 3
 
 ### 1-weather.ipynb
 Consulta o clima atual de uma cidade utilizando a API do [OpenWeatherMap](https://openweathermap.org/).
@@ -37,3 +42,4 @@ Demonstra operações de criação, leitura, atualização e exclusão em uma AP
 ## Objetivo
 
 Os exemplos visam ilustrar conceitos de **reuso de software**, mostrando como bibliotecas e APIs existentes podem ser combinadas para criar novas funcionalidades com pouco código.
+
