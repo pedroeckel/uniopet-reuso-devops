@@ -1,11 +1,27 @@
-# Repositório de Materiais - Reuso e Devops
+# Repositório de Materiais - Reuso e DevOps
 
-Este repositório centraliza os exemplos e atividades utilizados nas aulas dos cursos ministrados pelo Prof. Pedro Eckel de Engenharia de Software da UniOpet. Os materiais estão organizados por aula para facilitar o acesso dos estudantes.
+Este repositório centraliza os exemplos e atividades utilizados nas disciplinas ministradas pelo Prof. Pedro Eckel de Engenharia de Software da UniOpet. Os materiais agora estão organizados por disciplina (Reuso e DevOps) para facilitar o acesso dos estudantes.
 
 ## Estrutura
 
-- `aula-3/`: notebooks e imagens das aulas anteriores.
-- `aula-4/`: pasta reservada para novos materiais.
+- `reuso/`: conteúdos da disciplina de reuso de software.
+  - `aula-3/`: notebooks e imagens das aulas anteriores.
+  - `aula-4/`: pasta reservada para novos materiais.
+- `devops/`: conteúdos da disciplina de DevOps.
+
+## Como clonar o repositório
+
+Utilize o Git para clonar o repositório localmente:
+
+```bash
+# Via HTTPS
+git clone https://github.com/<usuario>/api-python.git
+
+# Via SSH
+git clone git@github.com:<usuario>/api-python.git
+
+cd api-python
+```
 
 ## Requisitos
 
@@ -21,7 +37,7 @@ pip install jupyter requests folium polyline
 
 ## Como executar
 
-1. Clone o repositório e acesse a pasta do projeto.
+1. Acesse a pasta do projeto.
 2. Inicie o Jupyter Notebook:
    ```bash
    jupyter notebook
