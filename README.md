@@ -1,6 +1,6 @@
-# Centralizador de códigos - Reuso de software com APIs
+# Repositório de Materiais - Reuso e Devops
 
-Este repositório centraliza os exemplos utilizados nas aulas de reuso de software da UniOpet. Os materiais estão organizados por aula para facilitar o acesso dos estudantes.
+Este repositório centraliza os exemplos e atividades utilizados nas aulas dos cursos ministrados pelo Prof. Pedro Eckel de Engenharia de Software da UniOpet. Os materiais estão organizados por aula para facilitar o acesso dos estudantes.
 
 ## Estrutura
 
