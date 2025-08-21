@@ -181,7 +181,7 @@ git branch -a
 
 ---
 
-## 📋 9. Atividade prática (entrega)
+## 9. Atividade prática (entrega)
 
 1. Crie a branch `develop` no seu repositório.  
 2. Crie uma *feature* (`feature/sobre-mim`), implemente algo simples ou faça um ajuste e faça PR para `develop`.  
@@ -200,7 +200,7 @@ git branch -a
 
 ---
 
-## 📝 10. Resumo visual do fluxo
+## 10. Resumo visual do fluxo
 
 ```mermaid
 gitGraph
