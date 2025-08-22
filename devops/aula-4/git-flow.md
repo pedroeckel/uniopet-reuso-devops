@@ -51,7 +51,7 @@ git checkout -b develop
 git push -u origin develop
 ```
 
-3. No GitHub, proteja as branches `main` e `develop` (*Settings → Branches → Branch protection rules*).
+3. No GitHub, proteja a branche `main`  (*Settings → Branches → Branch protection rules*).
 
 ---
 
