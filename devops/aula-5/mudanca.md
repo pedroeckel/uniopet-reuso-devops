@@ -131,18 +131,3 @@ Funcionou conforme esperado; próximo passo: adicionar *lint* e teste unitário 
 - [x] Observabilidade/evidência preparada  
 - [x] Aprovação de par registrada no PR
 ```
-
----
-
-## Critérios de avaliação (rápidos)
-
-* **DSM completo e testável (3 pts):** hipótese mensurável + critérios claros.
-* **Execução e rastreabilidade (3 pts):** branch/PR/commits linkados.
-* **Evidências objetivas (3 pts):** prints/logs coerentes com os critérios.
-* **Rollback documentado (1 pt):** gatilho e passos verificados.
-
----
-
-## Observação metodológica
-
-O DSM acima força **hipótese → experimento → evidência → decisão**, com **pequeno blast radius** e **reversão rápida**. É intencionalmente simples para focar em **procedimento e mensuração**, não em complexidade técnica.
