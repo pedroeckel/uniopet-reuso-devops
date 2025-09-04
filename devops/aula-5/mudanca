@@ -1,0 +1,148 @@
+# Atividade – Documento de Solicitação de Mudança (DSM) no portfólio
+
+## Objetivo
+
+Produzir e versionar um **DSM** vinculado a uma mudança simples no portfólio pessoal, aplicando conceitos visto em aula
+
+## Instruções (resumo)
+
+1. Criar uma *branch* `feat/<slug-da-mudanca>`.
+2. Adicionar o DSM (arquivo Markdown) em `changes/DSM-<id>-<slug>.md`.
+3. Implementar uma **mudança padrão** (baixa complexidade) no portfólio.
+4. Abrir **PR** referenciando o DSM; anexar evidências (prints/logs).
+
+---
+
+## 1) Template de DSM (copie e preencha)
+
+Crie um arquivo `changes/DSM-<id>-<slug>.md` (ex.: `changes/DSM-0001-ci-badge.md`):
+
+```md
+# DSM-<id> — <Título curto da mudança>
+
+**Tipo de mudança:** Padrão | Normal | Emergencial  
+**Repositório:** <link>  
+**Branch:** <nome-da-branch>  
+**Responsável:** <nome> — **Data:** <AAAA-MM-DD>
+
+## 1. Contexto e problema
+Descreva a dor/risco/oportunidade. Evite “subir versão” sem contexto.
+
+## 2. Hipótese e valor esperado (falsificável)
+Se <ação>, então esperamos <efeito mensurável> pois <racional>.
+
+## 3. Escopo
+Arquivos/Componentes afetados. Limitar *blast radius* (apenas x/y).
+
+## 4. Risco e mitigação
+- Principais riscos (técnicos/operacionais).
+- Mitigações (pequenos lotes, *flag*, canário, janela controlada).
+
+## 5. Plano de rollout e rollback
+- **Rollout:** passos objetivos (ex.: habilitar *workflow* / ativar flag).
+- **Rollback:** passos objetivos e **gatilho** (ex.: falha no build, métrica < alvo).
+
+## 6. Métricas, SLIs e critérios de sucesso
+- Métricas (ex.: sucesso do *build*, Lighthouse, tempo de *pipeline*).
+- **Critérios de sucesso:** (ex.: 3 execuções consecutivas verdes; tempo ≤ 120s).
+- Janela de observação (ex.: 24h / 3 execuções).
+
+## 7. Aprovação proporcional ao risco
+Quem revisa (par independente). *Checklist* de risco abaixo.
+
+## 8. Rastreabilidade
+- **Issue/CR:** <link>  
+- **Commits:** <hash1>, <hash2>  
+- **PR:** <link> — **Release/Tag:** <opcional>
+
+## 9. Evidências (anexos)
+- Prints/artefatos: logs do CI, *screenshots*, relatório Lighthouse.
+
+## 10. Pós-mudança (review breve)
+O que funcionou / o que melhorar / decisões futuras.
+
+---
+
+### Checklist de risco (marcar)
+- [ ] Mudança pequena e isolada  
+- [ ] Plano de rollback testado  
+- [ ] Critérios de sucesso objetivos definidos  
+- [ ] Observabilidade/evidência preparada  
+- [ ] Aprovação de par registrada no PR
+```
+
+---
+
+## 2) Exemplo preenchido (A. CI de build + badge)
+
+Arquivo: `changes/DSM-0001-ci-badge.md`
+
+```md
+# DSM-0001 — CI de build e badge no README
+
+**Tipo de mudança:** Padrão  
+**Repositório:** https://github.com/aluno/portfolio  
+**Branch:** feat/ci-badge  
+**Responsável:** Nome do Aluno — **Data:** 2025-09-04
+
+## 1. Contexto e problema
+O portfólio não possui verificação automatizada de build. Falhas passam despercebidas, reduzindo confiabilidade.
+
+## 2. Hipótese e valor esperado (falsificável)
+Se adicionarmos um workflow de CI que execute `npm ci && npm run build` a cada push/PR, então esperamos **100% de builds verdes em 3 execuções consecutivas** e **tempo de pipeline ≤ 120s**, pois o projeto é pequeno e dependências são estáveis.
+
+## 3. Escopo
+Arquivos afetados: `.github/workflows/build.yml`, `README.md` (badge). Nenhuma mudança no código de produção.
+
+## 4. Risco e mitigação
+Risco: build quebrar por *lockfile* desatualizado.  
+Mitigação: atualizar `package-lock.json` na branch; rollback simples (remover workflow/badge).
+
+## 5. Plano de rollout e rollback
+- **Rollout:** (i) criar `build.yml`; (ii) abrir PR; (iii) observar 3 execuções.  
+- **Rollback (gatilho):** se 2 builds consecutivos falharem → remover `build.yml` e badge no mesmo PR.
+
+## 6. Métricas, SLIs e critérios de sucesso
+- **Métricas:** status do job (sucesso/falha), duração total (s).  
+- **Critérios:** 3/3 execuções verdes; duração ≤ 120s.
+
+## 7. Aprovação proporcional ao risco
+Revisor: @colega. Aprovação via PR.
+
+## 8. Rastreabilidade
+- **Issue/CR:** #12  
+- **Commits:** a1b2c3d, e4f5g6h  
+- **PR:** #13 — **Release/Tag:** v1.1.0 (opcional)
+
+## 9. Evidências (anexos)
+- Screenshot do workflow “Build” com 3 execuções verdes.  
+- Log consolidado com duração: 98s, 101s, 95s.  
+- README exibindo o badge do status.
+
+## 10. Pós-mudança (review breve)
+Funcionou conforme esperado; próximo passo: adicionar *lint* e teste unitário no pipeline.
+
+---
+
+### Checklist de risco (marcar)
+- [x] Mudança pequena e isolada  
+- [x] Plano de rollback testado  
+- [x] Critérios de sucesso objetivos definidos  
+- [x] Observabilidade/evidência preparada  
+- [x] Aprovação de par registrada no PR
+```
+
+---
+
+## Critérios de avaliação (rápidos)
+
+* **DSM completo e testável (3 pts):** hipótese mensurável + critérios claros.
+* **Execução e rastreabilidade (3 pts):** branch/PR/commits linkados.
+* **Evidências objetivas (3 pts):** prints/logs coerentes com os critérios.
+* **Rollback documentado (1 pt):** gatilho e passos verificados.
+
+---
+
+## Observação metodológica
+
+O DSM acima força **hipótese → experimento → evidência → decisão**, com **pequeno blast radius** e **reversão rápida**. É intencionalmente simples para focar em **procedimento e mensuração**, não em complexidade técnica.
