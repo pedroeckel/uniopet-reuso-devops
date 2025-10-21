@@ -25,7 +25,7 @@ Seu papel é selecionar uma **biblioteca externa confiável** para essa comunica
    - Python  
    - PHP  
 
-2. Pesquise **duas bibliotecas** que realizem requisições HTTP nessa linguagem.  
+2. Pesquise **duas bibliotecas** 
    Exemplos:  
    - JavaScript → `axios`, `node-fetch`  
    - Python → `requests`, `httpx`  
@@ -38,7 +38,7 @@ Seu papel é selecionar uma **biblioteca externa confiável** para essa comunica
    | ... | ... | ... | ... | ... | ... |
 
 4. Escolha **uma** das bibliotecas e registre sua decisão em um pequeno texto:
-
+Exemplo:
    ### Decisão Técnica
 
    - **Biblioteca escolhida:** axios  
@@ -49,13 +49,13 @@ Seu papel é selecionar uma **biblioteca externa confiável** para essa comunica
 
 ## Parte 2 — Implementação
 
-Implemente uma função que utilizr a biblioteca escolhida e faça um GET em um link de sua escolha
+Implemente uma função que utiliza a biblioteca escolhida
 
 ---
 
 ## Parte 3 — Documentação Técnica
 
-No arquivo `README.md`, inclua as seguintes seções:
+No arquivo `README.md`, inclua as seguintes seções, veja o exemplo:
 
 ```markdown
 # Módulo HTTP Reutilizável
